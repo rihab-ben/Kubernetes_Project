@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   labels:
     app: web
-  name: mynginx
+  name: nginxm2ssi
 spec:
   replicas: 1
   selector:
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - image: imaneaabouche/nginxm2ssi:v1
-        name: mynginx
+        name: nginxm2ssi
 
 ---
 apiVersion: v1
@@ -25,10 +25,10 @@ kind: Service
 metadata:
   labels:
     app: web
-  name: mynginx
+  name: nginxm2ssi
 spec:
   ports:
-  - nodePort: 32223
+  - nodePort: 32225
     port: 80
     protocol: TCP
     targetPort: 80
