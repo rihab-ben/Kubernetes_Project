@@ -14,7 +14,9 @@ services:
         MYSQL_ROOT_PASSWORD: password
 
    web:
-      image: my_app_php
+     build:
+       context: .
+       dockerfile: Dockerfile
       container_name: php_apache_container
       volumes:
         - ./code-PHP:/var/www/html
