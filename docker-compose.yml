@@ -1,0 +1,31 @@
+version: '3'
+services:
+   database_MySQL:
+      image: mysql
+      container_name: mysql_container
+      volumes:
+        - ./data-mysql:/var/lib/mysql
+        - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      networks:
+        - kubernetes_project
+      ports:
+        - "3306:3306"
+      environment:
+        MYSQL_ROOT_PASSWORD: password
+
+   web:
+      image: my_app_php
+      container_name: php_apache_container
+      volumes:
+        - ./code-PHP:/var/www/html
+
+      networks:
+        - kubernetes_project
+      ports:
+        - "8082:80"
+      depends_on:
+        - database_MySQL
+
+networks:
+  kubernetes_project:
+    driver: bridge
