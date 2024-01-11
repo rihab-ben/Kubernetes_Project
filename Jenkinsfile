@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-    DOCKERHUB_CREDENTIALS = credentials('mydock-hub')
+    DOCKERHUB_CREDENTIALS = credentials('Imane-dock')
   }
   stages {
     stage('Build') {
