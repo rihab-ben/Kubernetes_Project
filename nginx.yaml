@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   labels:
     app: web
-  name: myapp
+  name: app-m2ssi
 spec:
   replicas: 1
   selector:
@@ -16,8 +16,8 @@ spec:
         app: web
     spec:
       containers:
-      - image: imaneaabouche/myapp:v1
-        name: myapp
+      - image: imaneaabouche/app-m2ssi:v1
+        name: app-m2ssi
 
 ---
 apiVersion: v1
@@ -25,10 +25,10 @@ kind: Service
 metadata:
   labels:
     app: web
-  name: myapp
+  name: app-m2ssi
 spec:
   ports:
-  - nodePort: 32229
+  - nodePort: 32226
     port: 80
     protocol: TCP
     targetPort: 80
