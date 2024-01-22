@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t imaneaabouche/app-m2ssi:v1 .'
+        sh 'docker build -t imaneaabouche/app-m2ssi:v2 .'
       }
     }
     stage('Login') {
@@ -16,7 +16,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push imaneaabouche/app-m2ssi:v1'
+        sh 'docker push imaneaabouche/app-m2ssi:v2'
       }
     }
   }
