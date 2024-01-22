@@ -16,11 +16,11 @@ spec:
         app: web
     spec:
       containers:
-      - image: imaneaabouche/app-m2ssi:v1
+      - image: imaneaabouche/app-m2ssi:v2
         name: app-m2ssi
 
 ---
-apiVersion: v1
+apiVersion: v2
 kind: Service
 metadata:
   labels:
