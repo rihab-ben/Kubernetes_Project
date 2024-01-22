@@ -28,7 +28,7 @@ metadata:
   name: app-m2ssi
 spec:
   ports:
-  - nodePort: 32226
+  - nodePort: 32223
     port: 80
     protocol: TCP
     targetPort: 80
